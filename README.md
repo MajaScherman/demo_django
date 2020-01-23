@@ -2,12 +2,12 @@
 This is a demo django project using docker-compose and kubernetes.
 
 ### Prerequisites
-git
-minikube
-kubectl
-python 3.x
-Django 3.0.2
-gunicorn 0.0.4
+- git
+- minikube
+- kubectl
+- python 3.x
+- Django 3.0.2
+- gunicorn 0.0.4
 
 ## How to run
 1. clone this git repo $ git clone git@github.com:KaizenPikachu/demo_django.git
@@ -37,4 +37,6 @@ gunicorn 0.0.4
 10. Expose the service through local routing using minikube
 - minikube service django
 
+#### Notes
+The local-config.map got generated as a response to the empty .env folder, which I created as a placeholder for when environment variables will be needed. Since it is empty as of now, it don't need to be applied.
 
