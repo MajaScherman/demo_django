@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  django: &django
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: demo_django_image
+    env_file:
+      - ./.envs/.local
+    command: /start.sh
