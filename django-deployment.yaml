@@ -9,9 +9,9 @@ metadata:
     io.kompose.service: django
   name: django
 spec:
-  progressDeadlineSeconds: 2147483647
-  replicas: 1
-  revisionHistoryLimit: 2147483647
+  progressDeadlineSeconds: 3600
+  replicas: 4
+  revisionHistoryLimit: 15
   selector:
     matchLabels:
       io.kompose.service: django
@@ -35,7 +35,16 @@ spec:
         image: maja39/django-demo:0.2
         imagePullPolicy: Always
         name: django
-        resources: {}
+        # Resource allocation
+        resources:
+          requests:
+            cpu: 100m
+            memory: 34Mi
+          limits:
+            cpu: 1
+            memory: 200Mi
+            # Try crashloop by setting memory to less than 30 Mi
+        # Resource allocation end
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
       dnsPolicy: ClusterFirst

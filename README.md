@@ -40,3 +40,10 @@ This is a demo django project using docker-compose and kubernetes.
 #### Notes
 The local-config.map got generated as a response to the empty .env folder, which I created as a placeholder for when environment variables will be needed. Since it is empty as of now, it don't need to be applied.
 
+
+minikube ssh
+top
+shift m
+ctrl c
+ctrl d
+
